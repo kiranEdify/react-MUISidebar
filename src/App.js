@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+
+//routes component
+import Home from "./components/routes/Home";
+import Installation from "./components/routes/Installation";
+import Learn from "./components/routes/Learn";
+import AutoComplete from "./components/routes/AutoComplete";
+import FallBackRoute from "./components/routes/FallBackRoute";
+import Button from "./components/routes/Button";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<Home />}>
+          <Route path="installation" element={<Installation />} />
+          <Route path="learn" element={<Learn />} />
+          <Route path="autocomplete" element={<AutoComplete />} />
+          <Route path="button" element={<Button />} />
+          <Route path="*" element={<FallBackRoute />} />
+        </Route>
+        <Route path="*" element={<FallBackRoute />} />
+      </Routes>
+    </>
   );
 }
 
