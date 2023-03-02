@@ -26,7 +26,7 @@ const Home = () => {
           </List>
         </Drawer>
 
-        <Box sx={{ p: 3 }}>
+        <Box sx={{ p: 3 }}  width={"100vw"} height={"90vh"}  >
           <Typography variant="h4">Contents......!</Typography>
           
           <Outlet />
